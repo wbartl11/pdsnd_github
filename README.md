@@ -8,7 +8,7 @@ README.md File Created 07/17/2022
 Will's Python Project
 
 ### Description
-Describe what your project is about and what it does
+Will's Python Project analyzes bikeshare data from three major cities. 
 
 ### Files used
 Include the files used
