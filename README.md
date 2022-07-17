@@ -8,7 +8,8 @@ README.md File Created 07/17/2022
 Will's Python Project
 
 ### Description
-Will's Python Project analyzes bikeshare data from three major cities.
+Will's Python Project analyzes bikeshare data from three major cities. This project was assigned by Udacity. 
+
 
 ### Files used
 washington.csv
