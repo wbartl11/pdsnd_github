@@ -17,7 +17,7 @@ def get_filters():
     """
     print('Hello! Let\'s explore some US bikeshare data!')
 
-    # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+
     city = ''
     while city not in CITY_DATA.keys():
             city = input('Would you like to see data for Chicago, New York City, or Washington?:').lower()
@@ -26,7 +26,7 @@ def get_filters():
                 print('That\'s not a valid input! Please try again')
 
 
-    # TO DO: get user input for month (all, january, february, ... , june)
+
     month_list = ['january', 'february', 'march', 'april', 'may', 'june', 'all']
     month = ''
     while  month not in month_list:
@@ -35,7 +35,7 @@ def get_filters():
         if month not in month_list:
             print('That\'s not a valid input! Please try again')
 
-    # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
+
     day_list = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'all']
     day = ''
     while day not in day_list:
@@ -84,7 +84,7 @@ def time_stats(df):
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
     pop_month = df['month'].mode()
-    # TO DO: display the most common month
+
 
     month_dict = {1 : 'January', 2 : 'February', 3 : 'March', 4 : 'April', 5 : 'May', 6 : 'June'}
     popular_month = df['month'].mode()[0]
@@ -92,12 +92,12 @@ def time_stats(df):
 
     popular_day = df['day_of_week'].mode()[0]
     print('The most popular day of the week is: {}'.format(popular_day))
-    # TO DO: display the most common day of week
+
 
     df['hour'] = df['Start Time'].dt.hour
     popular_hour = df['hour'].mode()[0]
     print('The most common hour is:', popular_hour)
-    # TO DO: display the most common start hour
+
 
 
     print("\nThis took %s seconds." % (time.time() - start_time))
@@ -110,7 +110,7 @@ def station_stats(df):
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
 
-    # TO DO: display most commonly used start station
+
     comm_startstation = df['Start Station'].mode()[0]
     count_comm_startstation = df['Start Station'].value_counts()[comm_startstation]
     print('The most common start station was: {}, people started here {} times'.format(comm_startstation, count_comm_startstation))
@@ -126,10 +126,10 @@ def station_stats(df):
     print('The most common trip was: {}, it occurred {} times'.format(comm_trip, count_comm_trip))
 
 
-    # TO DO: display most commonly used end station
 
 
-    # TO DO: display most frequent combination of start station and end station trip
+
+
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -141,7 +141,7 @@ def trip_duration_stats(df):
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
 
-    # TO DO: display total travel time
+
     total_travel_time = df['Trip Duration'].sum()
 
     total_travel_time_prop = divmod(total_travel_time, 3600)
@@ -157,7 +157,7 @@ def trip_duration_stats(df):
 
     print("The average time was {} minutes and {} second(s)".format(int(avg_travel_time_prop[0]), int(avg_travel_time_prop[1])))
 
-    # TO DO: display mean travel time
+
 
 
     print("\nThis took %s seconds." % (time.time() - start_time))
@@ -170,7 +170,7 @@ def user_stats(df):
     print('\nCalculating User Stats...\n')
     start_time = time.time()
 
-    # TO DO: Display counts of user types
+
     try:
         user_type = df['User Type']
         count_user_type = user_type.value_counts(dropna=True)
@@ -178,7 +178,7 @@ def user_stats(df):
     except:
         print('no user type')
 
-    # TO DO: Display counts of gender
+
     try:
         df_gender = df['Gender']
         gender_count = df_gender.value_counts(dropna=True)
@@ -187,7 +187,7 @@ def user_stats(df):
         print("No gender data provided")
 
 
-    # TO DO: Display earliest, most recent, and most common year of birth
+    
     try:
         birth_year = df['Birth Year']
         comm_birth_year = birth_year.mode()[0]
