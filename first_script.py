@@ -211,14 +211,13 @@ def display_raw_data(df):
     Args:
         (DataFrame) df - Pandas DataFrame containing city data filtered by month and day
     """
-
-    row = -5
+    from tabulate import tabulate
     while True:
         see_raw_data = input('\nWould you like to see the next five row of raw data? Enter yes or no.\n')
         if see_raw_data.lower() != 'yes':
-            return
-        row = row + 5
-        print(df.iloc[row:row+5])
+            break
+        print(tabulate(df.iloc[np.arange(0+i,5+i)], headers = 'keys'))
+        i+=5
 
 def main():
     while True:
